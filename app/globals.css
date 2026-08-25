@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+body { color: #333333; background: #ffffff; font-family: Roboto, system-ui, sans-serif; }
+
+/* Matches Elementor button styling on willport.com */
+.wp-btn {
+  display: inline-block; background: #06653E; color: #fff; font-size: 15px; font-weight: 500;
+  border-radius: 5px; padding: 13px 25px; line-height: 1.2; transition: background .15s;
+}
+.wp-btn:hover { background: #000; }
+.wp-btn-outline {
+  display: inline-block; background: transparent; color: #06653E; border: 1px solid #06653E;
+  font-size: 15px; font-weight: 500; border-radius: 5px; padding: 12px 24px; transition: all .15s;
+}
+.wp-btn-outline:hover { background: #06653E; color: #fff; }
+
+/* Legal pages cloned verbatim from WordPress */
+.legal-prose h2 { font-size: 24px; font-weight: 500; margin: 32px 0 12px; color: #333; }
+.legal-prose h3 { font-size: 19px; font-weight: 500; margin: 24px 0 8px; color: #333; }
+.legal-prose p, .legal-prose li { font-size: 16px; line-height: 1.7; margin-bottom: 12px; }
+.legal-prose ul { list-style: disc; padding-left: 22px; margin-bottom: 16px; }
+.legal-prose a { color: #06653E; text-decoration: underline; }
+.legal-prose strong { font-weight: 600; }
