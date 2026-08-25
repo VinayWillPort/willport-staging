@@ -9,9 +9,12 @@ export default function About() {
         scope="Not covered by the change sheet. Cloned as-is from production — needs a scope decision from Doris before the release, or the retired vocabulary survives the scrub."
       />
       <Band tint="blue">
-        <Wrap className="max-w-3xl">
-          <h1 className="text-[30px] font-medium md:text-[38px]">About WILLPORT</h1>
-          <P className="mt-4 text-[17px]">A Powerful Tool to Facilitate Multi-Generational Wealth Transfer.</P>
+        <Wrap className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
+          <div>
+            <h1 className="text-[30px] font-medium md:text-[38px]">About WILLPORT</h1>
+            <P className="mt-4 text-[17px]">A Powerful Tool to Facilitate Multi-Generational Wealth Transfer.</P>
+          </div>
+          <img src="/img/family-three.png" alt="" className="w-full rounded-lg object-cover shadow-sm" />
         </Wrap>
       </Band>
       <Band>
@@ -33,7 +36,7 @@ export default function About() {
             But WILLPORT is more than just about gifting and scheduling. From seamless money movements with
             WILLpay to easy cross-border transactions via WILLPORTinternational and the innovative
             WILLPORTtrust, set to change inheritance management with{' '}
-            <mark className="bg-rose-100 px-0.5">blockchain</mark> technology, we&rsquo;re setting a new
+            blockchain technology, we&rsquo;re setting a new
             standard for financial engagement.
           </P>
           <P>
@@ -44,7 +47,7 @@ export default function About() {
           <P>
             WILLPORT has even more features that promise to make managing your financial legacy and
             personal connections smoother. With{' '}
-            <mark className="bg-rose-100 px-0.5">blockchain</mark> technology at its core, the app will
+            blockchain technology at its core, the app will
             become indispensable for nurturing family ties, managing finances, and creating lasting
             legacies.
           </P>

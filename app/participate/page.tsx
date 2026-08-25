@@ -15,13 +15,16 @@ export default function Participate() {
         scope="§9 says DO NOT change this page as part of the build — flag matching stale terms for a separate securities/legal review. Cloned verbatim. Note the conflict: the trust page must say “an approved trustee” unnamed, while this page already names Peak Trust publicly on the same domain."
       />
       <Band tint="blue">
-        <Wrap className="max-w-3xl">
+        <Wrap className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
+          <div>
           <h1 className="text-[30px] font-medium md:text-[38px]">Invest in WILLPORTtrust</h1>
           <P className="mt-4 text-[17px]">
             Join WILLPORTtrust&rsquo;s investment opportunity and be part of revolutionizing the trust
             services industry through innovative technology and personalized solutions.
           </P>
           <a href="https://willport.com/participate/" className="wp-btn mt-6">Invest Now</a>
+          </div>
+          <img src="/img/office-table.jpg" alt="" className="w-full rounded-lg object-cover shadow-sm" />
         </Wrap>
       </Band>
       <Band>

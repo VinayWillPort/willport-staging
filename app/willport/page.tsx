@@ -18,11 +18,18 @@ export default function WillportApp() {
         scope="Not covered by the change sheet — the highest-risk omission. The trust paragraph below is duplicated inside a slider widget on production, so a page-body find-and-replace will miss one copy. The WILLinvest safety claim is the kind §5.3 holds investment copy for."
       />
       <Band tint="blue">
-        <Wrap className="max-w-3xl">
-          <h1 className="text-[30px] font-medium md:text-[38px]">Your Multigenerational Super App</h1>
-          <P className="mt-4 text-[17px]">
-            The Multigenerational Super App enables you to celebrate and engage with those closest to you.
-          </P>
+        <Wrap className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
+          <div>
+            <h1 className="text-[30px] font-medium md:text-[38px]">Your Multigenerational Super App</h1>
+            <P className="mt-4 text-[17px]">
+              The Multigenerational Super App enables you to celebrate and engage with those closest to you.
+            </P>
+            <div className="mt-7 flex gap-3">
+              <a href="https://apps.apple.com/pk/app/willport/id1439199443"><img src="/img/app-store.png" alt="Download on the App Store" className="h-11" /></a>
+              <a href="https://play.google.com/store/apps/details?id=com.willportapp&hl=en_US"><img src="/img/google-play.png" alt="Get it on Google Play" className="h-11" /></a>
+            </div>
+          </div>
+          <img src="/img/app-01.png" alt="" className="mx-auto w-full max-w-sm" />
         </Wrap>
       </Band>
 
@@ -31,7 +38,7 @@ export default function WillportApp() {
           <P>
             WILLPORT&rsquo;s mission is to educate, empower, and connect all generations and backgrounds by
             uniting their financial journeys with the most important moments of life&hellip; whether in
-            WILLPORT PRESENTlife or <mark className="bg-rose-100 px-0.5">AFTERlife</mark>&hellip; all in the
+            WILLPORT PRESENTlife or AFTERlife&hellip; all in the
             palm of your hand.
           </P>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -42,17 +49,13 @@ export default function WillportApp() {
               </div>
             ))}
           </div>
-          <div className="mt-8 rounded-lg border-2 border-rose-300 bg-rose-50/50 p-6">
+          <div className="mt-8">
             <P className="text-[15px]">
-              The <mark className="bg-rose-100 px-0.5">AFTERlife and Deployment Trust Platform</mark>{' '}
+              The AFTERlife and Deployment Trust Platform{' '}
               allows for the electronic and gradual disbursements of cash, inheritance proceeds, retirement
               plans, and life insurance proceeds directly to Beneficiaries. Inheritance and legacy messages
               or videos are sent to the beneficiary&rsquo;s WILLPORT App.
             </P>
-            <p className="mt-3 text-[12px] font-medium text-rose-800">
-              ↑ This exact paragraph appears TWICE on production — once as a static block and once inside
-              the slider widget.
-            </p>
           </div>
         </Wrap>
       </Band>
@@ -66,7 +69,7 @@ export default function WillportApp() {
               <P className="mt-3 text-[15px]">
                 Start investing with our user-friendly micro-investment platform. We offer turnkey
                 wealth-building with no investment minimums. Gain easy access to T-bills and a full range of
-                money markets <mark className="bg-rose-100 px-0.5">with the backing of the US government</mark>.
+                money markets with the backing of the US government.
               </P>
             </div>
             <div className="rounded-lg bg-white p-6">

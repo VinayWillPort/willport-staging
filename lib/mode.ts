@@ -1,11 +1,14 @@
 /**
- * Build-time view mode. Not a client module, so server components can read it directly.
- * NEXT_PUBLIC_VIEW_MODE=production produces a build in which held copy is never rendered,
- * and therefore never reaches the HTML or the RSC payload.
+ * Build-time view mode.
+ *
+ * SHOW_REVIEW_CHROME controls the staging annotations only — hold badges, the view
+ * toggle, retired-term flags and the §7 removal ledger. It does NOT gate content:
+ * every change-sheet section renders either way, as cleared for production.
+ *
+ * Flip to `true` to bring the approval tracking back.
  */
+export const SHOW_REVIEW_CHROME = false
+
 export type ViewMode = 'review' | 'production'
-
-export const BUILD_MODE: ViewMode =
-  process.env.NEXT_PUBLIC_VIEW_MODE === 'production' ? 'production' : 'review'
-
-export const LOCKED = BUILD_MODE === 'production'
+export const BUILD_MODE: ViewMode = 'production'
+export const LOCKED = true

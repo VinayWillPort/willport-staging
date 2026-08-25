@@ -28,15 +28,20 @@ export function P({ children, className = '' }: { children: React.ReactNode; cla
 
 export function CtaBand() {
   return (
-    <Band tint="blue">
-      <Wrap className="text-center">
-        <H2>Join us at WILLPORT</H2>
-        <P className="mx-auto mt-4 max-w-2xl">
-          Take the first step towards a brighter financial future. Together, we can bridge generations,
-          empower individuals, and connect life&rsquo;s most important moments.
-        </P>
-        <a href="/contact-us" className="wp-btn mt-7">Subscribe Now</a>
-      </Wrap>
-    </Band>
+    <div className="relative overflow-hidden">
+      <img src="/img/subscribe.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="relative py-16 md:py-20">
+        <Wrap className="text-center text-white">
+          <img src="/img/logo-white.svg" alt="WILLPORT" className="mx-auto h-10 w-auto" />
+          <H2 className="mt-6 text-white">Join us at WILLPORT</H2>
+          <p className="mx-auto mt-4 max-w-2xl text-[16px] leading-relaxed text-white/85">
+            Take the first step towards a brighter financial future. Together, we can bridge generations,
+            empower individuals, and connect life&rsquo;s most important moments.
+          </p>
+          <a href="/contact-us" className="wp-btn mt-7">Subscribe Now</a>
+        </Wrap>
+      </div>
+    </div>
   )
 }

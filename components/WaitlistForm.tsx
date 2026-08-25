@@ -38,28 +38,28 @@ export default function WaitlistForm() {
   }
 
   return (
-    <div ref={box} className="mx-auto mt-8 max-w-md">
+    <div ref={box} className="mx-auto mt-8 w-full max-w-md">
       {state === 'done' ? (
-        <p role="status" className="rounded border border-brand bg-tint-green px-4 py-3 text-[16px] text-brand">
+        <p role="status" className="rounded border border-white/50 bg-white px-4 py-3 text-[16px] text-brand">
           You&rsquo;re on the list. We&rsquo;ll send availability and eligibility updates.
         </p>
       ) : (
         <form onSubmit={submit} noValidate className="text-left">
-          <label htmlFor="wl-email" className="block text-[14px] font-medium">Email address</label>
+          <label htmlFor="wl-email" className="block text-[14px] font-medium text-white">Email address</label>
           <div className="mt-2 flex flex-col gap-3 sm:flex-row">
             <input
               id="wl-email" name="email" type="email" required value={email}
               onChange={(e) => { setEmail(e.target.value); if (state === 'error') setState('idle') }}
               aria-invalid={state === 'error'}
               aria-describedby={state === 'error' ? 'wl-err' : undefined}
-              className="w-full rounded border border-black/25 px-3 py-3 text-[15px] focus:border-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+              className="w-full rounded border border-white/40 bg-white px-3 py-3 text-[15px] text-body focus:border-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             />
             <button type="submit" disabled={state === 'sending'} className="wp-btn shrink-0 disabled:opacity-60">
               {state === 'sending' ? 'Sending…' : 'Join the trust waitlist'}
             </button>
           </div>
           {state === 'error' && (
-            <p id="wl-err" role="alert" className="mt-2 text-[14px] text-rose-700">
+            <p id="wl-err" role="alert" className="mt-2 text-[14px] text-rose-200">
               Enter a valid email address.
             </p>
           )}

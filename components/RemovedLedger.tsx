@@ -1,6 +1,6 @@
 'use client'
 import { useView } from '@/lib/review'
-import { BUILD_MODE } from '@/lib/mode'
+import { SHOW_REVIEW_CHROME } from '@/lib/mode'
 import { Wrap } from '@/components/Ui'
 
 /** §7 — what was deleted from the live page, so reviewers can confirm nothing was lost by accident. */
@@ -19,7 +19,7 @@ const REMOVED = [
 
 export default function RemovedLedger() {
   const { mode } = useView()
-  if (BUILD_MODE === 'production' || mode === 'production') return null
+  if (!SHOW_REVIEW_CHROME) return null
   return (
     <div className="border-t-4 border-black bg-neutral-50 py-12">
       <Wrap>

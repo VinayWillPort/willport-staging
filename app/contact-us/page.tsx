@@ -41,15 +41,6 @@ export default function Contact() {
             <div>Contact us at service@willport.com</div>
           </div>
         </div>
-
-        <div className="mt-6 border-l-4 border-emerald-600 bg-emerald-50 px-4 py-3 text-[12px] text-emerald-900">
-          <span className="font-bold tracking-wide">RELEVANT TO §8.1</span>
-          <div className="mt-1">
-            This SMS consent block is existing approved marketing-consent language. §8.1 holds the trust
-            waitlist form because no approved consent text exists for email — Privacy may be able to adapt
-            this rather than draft from scratch. This page also confirms a form plugin is installed.
-          </div>
-        </div>
       </Wrap>
     </Band>
   )

@@ -1,0 +1,370 @@
+/* Loaded LAST, after the whole vendored WordPress/Elementor cascade.
+   Next.js injects app CSS before any <link> we place in <head>, so rules written
+   there tie with Elementor's and lose on source order. Anything that must win
+   belongs in this file. */
+
+/* ---------- §3.1 hero buttons ---------- */
+.wp-hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.elementor-27 .elementor-element-6023f35e .elementor-button,
+.elementor-27 .elementor-element-6023f35e .elementor-button:hover,
+.elementor-27 .elementor-element-6023f35e .elementor-button:focus,
+.elementor-27 .elementor-element-6023f35e .elementor-button:active {
+  background-color: #06653E;
+  color: #ffffff;
+  transition: none;
+}
+.elementor-27 .elementor-element-6023f35e .elementor-button.wp-btn-secondary,
+.elementor-27 .elementor-element-6023f35e .elementor-button.wp-btn-secondary:hover,
+.elementor-27 .elementor-element-6023f35e .elementor-button.wp-btn-secondary:focus,
+.elementor-27 .elementor-element-6023f35e .elementor-button.wp-btn-secondary:active {
+  background-color: #000000;
+  color: #ffffff;
+  transition: none;
+}
+/* §11 requires a visible keyboard focus state; this is not a hover effect. */
+.elementor-27 .elementor-element-6023f35e .elementor-button:focus-visible {
+  outline: 2px solid #06653E;
+  outline-offset: 2px;
+}
+
+/* ---------- §8.2 video placeholder ---------- */
+.wp-video-slot {
+  width: 100%; max-width: 540px; margin-top: 50px;
+  aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center;
+  border: 2px dashed rgba(0,0,0,.22); border-radius: 5px; background: #fff;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.05);
+}
+.wp-video-slot span {
+  padding: 0 24px; font-size: 13px; line-height: 20px; text-align: center; color: rgba(0,0,0,.45);
+}
+
+/* ---------- §3.2 subheading ----------
+   dc83381 is half of the live hero title (30px/600), which read as a second title
+   under the new H1. Dropped below it so it functions as a subheading. */
+/* Matches the body copy beside it (fa2348a: Roboto 16/400/24); weight stays 600
+   so it still reads as a heading rather than another paragraph.
+   Elementor's own rule is .elementor-27 .elementor-element.elementor-element-dc83381
+   .elementor-heading-title = (0,4,0); the widget class takes this to (0,5,0) so it
+   also beats the 22px override inside @media (max-width: 767px). */
+.elementor-27 .elementor-element.elementor-element-dc83381.elementor-widget-heading .elementor-heading-title,
+.elementor-27 .elementor-element.elementor-element-dc83381 .elementor-heading-title {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* ---------- section scaffold ----------
+   Values taken from live container 78ddfbc: 80px vertical padding, 1200px content. */
+.wp-section { padding: 80px 0; }
+.wp-section-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+/* Elementor's .elementor-widget:not(:last-child){margin-block-end:20px} is (0,2,0)
+   and uses the logical property, so a plain .wp-section-heading{margin-bottom}
+   never applied. Match its shape and out-specify it. */
+.wp-section .wp-section-heading.elementor-widget,
+.wp-section .wp-section-heading.elementor-widget:not(:last-child) {
+  margin-block-end: 60px;
+  margin-bottom: 60px;
+}
+.wp-section-heading .elementor-heading-title,
+.elementor-27 .wp-section-heading .elementor-heading-title { text-align: center; }
+
+/* ---------- §4.1 steps ---------- */
+.wp-steps,
+.wp-cards {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;          /* every row the same height, not just each pair */
+  align-items: stretch;
+  column-gap: 40px; row-gap: 40px;
+  list-style: none; margin: 0; padding: 0;
+}
+.wp-steps > li,
+.wp-cards > li {
+  margin: 0;
+  height: 100%;                 /* fill the row box the grid gives us */
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 5px;               /* same radius token as the Elementor buttons */
+  padding: 30px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+}
+/* icon-box adds its own container margins; neutralise inside the card */
+.wp-steps > li > .elementor-widget-container,
+.wp-cards > li > .elementor-widget-container { margin: 0; }
+
+/* Elementor forces .elementor-icon colour to #333333 for this widget, which put a
+   near-black numeral on the green disc. Matched at the same depth and placed later. */
+.elementor-27 .elementor-element-579a94c.elementor-view-default .elementor-icon.wp-step-num,
+.elementor-27 .elementor-element-579a94c .elementor-icon.wp-step-num,
+.elementor-27 .elementor-icon.wp-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background-color: #06653E;
+  color: #ffffff;
+  fill: #ffffff;
+  font-family: "Roboto", Sans-serif;
+  font-size: 18px; font-weight: 600; line-height: 1;
+}
+
+@media (max-width: 1024px) {
+  .wp-steps, .wp-cards { column-gap: 30px; row-gap: 30px; }
+}
+@media (max-width: 767px) {
+  .wp-section { padding: 40px 0; }
+  .wp-steps, .wp-cards { grid-template-columns: 1fr; grid-auto-rows: auto; row-gap: 20px; }
+  .wp-steps > li,
+.wp-cards > li { padding: 24px; }
+  .wp-section .wp-section-heading.elementor-widget,
+  .wp-section .wp-section-heading.elementor-widget:not(:last-child) {
+    margin-block-end: 32px;
+    margin-bottom: 32px;
+  }
+}
+
+/* ---------- §4.2 section background ----------
+   Production tints the "Benefits to Blockchain" section (container 65e47c87) with
+   --e-global-color-d8aad07 (#E4FEF4). Reusing that token behind "The document is only
+   the beginning" so the page alternates tints rather than running white bands together.
+   Matches the shape of Elementor's own background rules so it applies cleanly. */
+.elementor-27 .elementor-element.elementor-element-78ddfbc:not(.elementor-motion-effects-element-type-background),
+.elementor-27 .elementor-element-78ddfbc {
+  background-color: var(--e-global-color-d8aad07);
+}
+
+/* Pale green tint, the same token §4.2 uses (--e-global-color-d8aad07 / #E4FEF4),
+   taken from production's "Benefits to Blockchain" section. */
+.wp-section-tint-green { background-color: var(--e-global-color-d8aad07); }
+
+/* §5.2 card icons: WillPort's own SVGs. Fixed 40px box with contain, because the
+   source icons have different aspect ratios (calendar is 192x208, the rest ~50x50). */
+.elementor-27 .wp-cards .elementor-icon .wp-card-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* ---------- §5.3 investment disclosure ----------
+   Sits beside the FAQ so the risk statement stays with the answer (§5.3 forbids
+   moving it to the footer alone). Type matches the page's icon-box title (20/600)
+   and text-editor (16/400/24); green rule ties it to the brand without shouting. */
+.wp-section-tight { padding: 80px 0; }
+
+.wp-disclosure {
+  background: var(--e-global-color-0db6b3a);
+  border-radius: 5px;
+  border-inline-start: 6px solid var(--e-global-color-3574922);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+  padding: 34px 38px;
+}
+.wp-disclosure-title {
+  font-family: "Roboto", Sans-serif;
+  font-size: 20px; font-weight: 600; line-height: 1.3;
+  color: var(--e-global-color-1a38a27);
+  margin: 0 0 10px;
+}
+.wp-disclosure-body {
+  font-family: "Roboto", Sans-serif;
+  font-size: 16px; font-weight: 400; line-height: 24px;
+  color: var(--e-global-color-1a38a27);
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .wp-section-tight { padding: 40px 0; }
+  .wp-disclosure { padding: 24px; }
+}
+
+/* ---------- §5.4 bottom-of-page disclosure ----------
+   Small text, sits directly above the global footer. Neutral band so it reads as
+   legal boilerplate rather than another content section. */
+.wp-disclaimer {
+  background: #F7F8F9;
+  border-block-start: 1px solid rgba(0, 0, 0, .08);
+  padding: 28px 0;
+}
+.wp-disclaimer-body {
+  font-family: "Roboto", Sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 24px;
+  color: rgba(51, 51, 51, .85);
+  margin: 0 auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .wp-disclaimer { padding: 22px 0; }
+}
+
+/* ---------- §6 Questions people ask ----------
+   Card-per-question, matching the step and benefit cards. Capped width keeps the
+   answer line length readable rather than running the full 1200px container. */
+.wp-faq { max-width: 860px; margin: 0 auto; }
+
+.wp-faq-item {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: 5px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+  margin-block-end: 14px;
+  overflow: hidden;
+  transition: box-shadow .15s, border-color .15s;
+}
+.wp-faq-item:last-child { margin-block-end: 0; }
+.wp-faq-item.is-open {
+  border-color: var(--e-global-color-3574922);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .10);
+}
+
+.wp-faq-h { margin: 0; }
+
+.wp-faq-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 26px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: start;
+}
+/* §11 requires a visible keyboard focus state. */
+.wp-faq-btn:focus-visible {
+  outline: 2px solid var(--e-global-color-3574922);
+  outline-offset: -2px;
+}
+
+.wp-faq-q {
+  font-family: "Roboto", Sans-serif;
+  font-size: 18px; font-weight: 600; line-height: 26px;
+  color: var(--e-global-color-1a38a27);
+}
+
+.wp-faq-mark {
+  flex: 0 0 auto;
+  width: 32px; height: 32px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--e-global-color-d8aad07);
+}
+.wp-faq-mark svg {
+  stroke: var(--e-global-color-3574922);
+  stroke-width: 2;
+  stroke-linecap: round;
+  fill: none;
+}
+/* Plus collapses to a minus when the panel opens. */
+.wp-faq-bar { transition: opacity .15s; }
+.wp-faq-item.is-open .wp-faq-mark { background: var(--e-global-color-3574922); }
+.wp-faq-item.is-open .wp-faq-mark svg { stroke: #ffffff; }
+.wp-faq-item.is-open .wp-faq-bar { opacity: 0; }
+
+.wp-faq-panel { padding: 0 26px 24px; }
+.wp-faq-a {
+  font-family: "Roboto", Sans-serif;
+  font-size: 16px; font-weight: 400; line-height: 26px;
+  color: var(--e-global-color-1a38a27);
+  margin: 0;
+  max-width: 72ch;
+}
+
+@media (max-width: 767px) {
+  .wp-faq-btn { padding: 18px 18px; gap: 14px; }
+  .wp-faq-q { font-size: 16px; line-height: 24px; }
+  .wp-faq-panel { padding: 0 18px 20px; }
+}
+
+/* ---------- bare <button> border ----------
+   hello-elementor's reset.css sets `border: 1px solid #c36` on every <button>.
+   Remove that border only — nothing else about the button is changed. */
+body button:not(.elementor-button),
+body button:not(.elementor-button):hover,
+body button:not(.elementor-button):focus,
+body button:not(.elementor-button):active {
+  border: 0;
+}
+
+/* ---------- §8.1 trust waitlist ----------
+   Band 2b877fd is already column-flow and dark green on production; only the heading
+   colour needs forcing, since a763cbc is #333333 where it lives on the live page. */
+.elementor-27 .elementor-element.elementor-element-a763cbc.wp-waitlist-h .elementor-heading-title {
+  color: #ffffff;
+  text-align: center;
+}
+.wp-waitlist .e-con-inner { max-width: 760px; }
+.wp-waitlist .elementor-widget { width: 100%; }
+
+/* Button sits on the green band, so the standard green fill would vanish. */
+.elementor-27 .wp-waitlist .wp-btn,
+.elementor-27 .wp-waitlist .wp-btn:hover,
+.elementor-27 .wp-waitlist .wp-btn:focus,
+.elementor-27 .wp-waitlist .wp-btn:active {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* ---------- bare <button> border ----------
+   hello-elementor's reset.css sets `border: 1px solid #c36` on every <button>.
+   Remove that border only — nothing else about the button is changed. */
+body button:not(.elementor-button),
+body button:not(.elementor-button):hover,
+body button:not(.elementor-button):focus,
+body button:not(.elementor-button):active {
+  border: 0;
+}
+
+/* ---------- §8.1 trust waitlist ----------
+   Container 35be983 is declared --flex-direction: row on production (it holds a
+   text/image split there). §8.1 has no image, so override Elementor's own variables
+   rather than the resolved properties — setting flex-direction directly loses to
+   .e-con > .e-con-inner, which reads the variable. */
+.elementor-27 .elementor-element.elementor-element-35be983 {
+  --flex-direction: column;
+  --align-items: center;
+  --justify-content: center;
+  --container-widget-width: 100%;
+  --container-widget-flex-grow: 0;
+  --gap: 0px;
+  --row-gap: 0px;
+  --column-gap: 0px;
+}
+.wp-waitlist-card { border-radius: 5px; }
+
+.wp-waitlist-card .e-con-inner {
+  max-width: 720px;
+  text-align: center;
+}
+.wp-waitlist-card .elementor-widget { width: 100%; }
+.wp-waitlist-card .elementor-element-6c1c0e0c > .elementor-widget-container { margin-block-start: 14px; }
+
+/* ---------- bare <button> border ----------
+   hello-elementor's reset.css sets `border: 1px solid #c36` on every <button>.
+   Remove that border only — nothing else about the button is changed. */
+body button:not(.elementor-button),
+body button:not(.elementor-button):hover,
+body button:not(.elementor-button):focus,
+body button:not(.elementor-button):active {
+  border: 0;
+}
+
+/* ---------- §8.1 trust waitlist ----------
+   Inner card is centred and column-flowed; production's version is a two-column
+   text/image split, but §8.1 has no image and one centred column reads better. */
+.wp-waitlist-card { border-radius: 5px; }
+.wp-waitlist-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.wp-waitlist-inner .elementor-widget { width: 100%; }

@@ -18,20 +18,23 @@ export default function Vouchers() {
         scope="Not covered by the change sheet. “Guaranteed” is on the §7 search list, and describing vouchers as legal agreements delivered via WILLPORTtrust conflicts with §7’s ban on claims that WILLPORT prepares legal instruments."
       />
       <Band tint="blue">
-        <Wrap className="max-w-3xl">
-          <h1 className="text-[30px] font-medium md:text-[38px]">WILLPORTvouchers</h1>
-          <P className="mt-4 text-[17px]">
-            Giving Benefactors peace of mind that their Beneficiaries are educated in how to invest their
-            inheritance.
-          </P>
+        <Wrap className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
+          <div>
+            <h1 className="text-[30px] font-medium md:text-[38px]">WILLPORTvouchers</h1>
+            <P className="mt-4 text-[17px]">
+              Giving Benefactors peace of mind that their Beneficiaries are educated in how to invest their
+              inheritance.
+            </P>
+          </div>
+          <img src="/img/vouchers-hero.jpg" alt="" className="w-full rounded-lg object-cover shadow-sm" />
         </Wrap>
       </Band>
       <Band>
         <Wrap className="max-w-3xl">
           <P>
-            WILLPORTvouchers are <mark className="bg-rose-100 px-0.5">legal agreements</mark> initiated by
+            WILLPORTvouchers are legal agreements initiated by
             the Benefactor, through the Wealth Advisor, payable to the Beneficiary{' '}
-            <mark className="bg-rose-100 px-0.5">via the WILLPORTtrust platform</mark>. This allows
+            via the WILLPORTtrust platform. This allows
             Benefactors to educate and transfer wealth while they are still alive. Purchased through an RIA
             or a certified Wealth Advisor.
           </P>
@@ -39,7 +42,7 @@ export default function Vouchers() {
             {V.map((v) => (
               <div key={v.h} className="rounded-lg border border-black/10 p-6">
                 <H3>{v.h.includes('AFTERLife')
-                  ? <><mark className="bg-rose-100 px-0.5">AFTERLife</mark> Inheritance Voucher (coming soon)</>
+                  ? <>AFTERLife Inheritance Voucher (coming soon)</>
                   : v.h}</H3>
                 <P className="mt-3 text-[15px]">{v.b}</P>
               </div>

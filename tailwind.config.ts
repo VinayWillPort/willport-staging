@@ -13,5 +13,6 @@ export default {
       maxWidth: { site: '1140px' },
     },
   },
+  corePlugins: { preflight: false }, // WP reset.css owns the base layer
   plugins: [],
 } satisfies Config

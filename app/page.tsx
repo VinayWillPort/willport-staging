@@ -79,7 +79,7 @@ export default function Home() {
       <Change
         status="blocked" cite="§8.2 New video"
         approvers="Doris, Legal, Product; video asset owner for captions/transcript"
-        note="Old “Late 2021 Estate and Trust Release” embed removed. No replacement asset supplied — file, title, thumbnail, captions and transcript all outstanding."
+        note="Obsolete embed removed. No replacement asset supplied — file, title, thumbnail, captions and transcript all outstanding."
       >
         <Band>
           <Wrap className="max-w-3xl text-center">
