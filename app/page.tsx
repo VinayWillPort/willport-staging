@@ -23,12 +23,12 @@ export default function Home() {
         <Wrap className="max-w-4xl">
           <H2>WILLPORT Holdings, Inc.</H2>
           <P className="mt-5">
-            WILLPORT Holdings, Inc. has transformed how you plan and perform important tasks for your
-            loved ones, whether they&rsquo;re family, friends, or associates. Our comprehensive platform
-            offers a range of services that cover daily activities like money transfers, international
-            payments, gift-giving, and investments. We also provide a revolutionary estate planning and
-            Trust Platform that ensures seamless communication and asset transfer to your beneficiaries
-            after you&rsquo;ve passed on.
+            WILLPORT Holdings, Inc. connects financial activities, gifting, legacy-planning information
+            and personal messages in one technology experience. Users can organize information and plan
+            how they want to support the people they care about over time. Where trust services are used,
+            an approved trustee holds and administers trust assets under the governing documents and
+            applicable law. WILLPORT provides technology and general educational information and does not
+            provide legal, tax, investment or financial advice.
           </P>
         </Wrap>
       </Band>
