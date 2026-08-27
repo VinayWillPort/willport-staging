@@ -116,11 +116,17 @@ export default function Hero() {
           data-id="47fc797f"
           data-element_type="container"
         >
+          {/* §8.2 — placeholder video. The approved asset, title, thumbnail, captions and
+              transcript are still outstanding; this stands in so the layout can be reviewed.
+              Responsive 16:9, lazy-loaded, no autoplay, privacy-enhanced host. */}
           <div className="wp-video-slot">
-            <span>
-              Approved trust video &mdash; placeholder. The obsolete embed has been removed; the
-              replacement file, title, thumbnail, captions and transcript are outstanding.
-            </span>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/D3MjTAsi_Ac?rel=0"
+              title="WILLPORT trust overview (placeholder)"
+              loading="lazy"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </div>
         </div>
       </div>
